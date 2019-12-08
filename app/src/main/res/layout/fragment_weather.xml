@@ -6,13 +6,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <ImageView
+        android:id="@+id/background_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/cloud2"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"/>
+
+
 
     <TextView
-        android:id="@+id/cityName"
+        android:id="@+id/cityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +53,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             tools:text="Clear"/>
 
@@ -49,7 +62,7 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             tools:text="clear sky"/>
 
@@ -57,7 +70,7 @@
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             tools:text="42°"/>
 
@@ -66,7 +79,7 @@
             android:id="@+id/humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             tools:text="42%"/>
 

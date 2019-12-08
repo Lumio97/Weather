@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.dssd.R
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_weather.*
-import kotlinx.android.synthetic.main.fragment_weather.cityName
+import kotlinx.android.synthetic.main.fragment_weather.cityTitle
 
 class SecondFrragment: Fragment() {
     override fun onCreateView(
@@ -23,14 +23,22 @@ class SecondFrragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val weather = arguments?.getString(FirstFragment.WEATHER_OVERALL)
 
-        cityName.text="Moscow"
-        title.text="Clear"
-        description.text="clear sky"
-        temperature.text="42°"
-        humidity.text="42%"
+        cityTitle.text =arguments?.getString(FirstFragment.CITY)
+        title.text=arguments?.getString(FirstFragment.WEATHER_OVERALL)
+        description.text=arguments?.getString(FirstFragment.WEATHER_DESCRIPTION)
+        temperature.text="${arguments?.getDouble(FirstFragment.TEMP)}°C"
+        humidity.text="${arguments?.getInt(FirstFragment.HUMIDITY)}%"
 
+       val drawable = resources.getDrawable(when(weather) {
+            "Clear" -> R.drawable.ffdfdf
+            "Snow" -> R.drawable.snow
+            "Rain"-> R.drawable.rain
+            else -> R.drawable.default_photo
 
+        })
+        background_picture.setImageDrawable(drawable)
     }
 
 }
