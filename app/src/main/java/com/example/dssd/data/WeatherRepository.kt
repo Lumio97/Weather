@@ -1,6 +1,7 @@
 package com.example.dssd.data
 
 import android.util.Log
+import com.example.dssd.WeatherApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -22,6 +23,17 @@ class WeatherRepository (
 
 
     fun getCurrentWeatherForCity(city:String,countryCode:String) = async {
-    api.getCurrentWeatherForCity("$city,$countryCode").execute().body()
+        val weather = api.getCurrentWeatherForCity("$city,$countryCode")
+            .execute()
+            .body()
+        WeatherApp.db
+            .weatherMainDao()
+            .insertAll(weather!!.main)
+        Log.i("DbTest",WeatherApp.db
+            .weatherMainDao()
+                .getAllWeatherMain()
+            .toString())
+        weather
+
     }
 }

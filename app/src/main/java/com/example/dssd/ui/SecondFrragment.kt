@@ -32,10 +32,10 @@ class SecondFrragment: Fragment() {
         humidity.text="${arguments?.getInt(FirstFragment.HUMIDITY)}%"
 
        val drawable = resources.getDrawable(when(weather) {
-            "Clear" -> R.drawable.ffdfdf
+            "Clear" -> R.drawable.clear
             "Snow" -> R.drawable.snow
             "Rain"-> R.drawable.rain
-            else -> R.drawable.default_photo
+            else -> R.drawable.def
 
         })
         background_picture.setImageDrawable(drawable)
